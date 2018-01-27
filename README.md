@@ -48,3 +48,16 @@ Here I will consider the rubric points individually and describe how each point 
  # Sliding Window Search
  1. Describe how (and identify where in your code) you implemented a sliding window search. 
     How did you decide what scales to search and how much to overlap windows?
+    
+    For this project four sizes of windows were chosen - 32x32, 48x48, 64x64 and 128x128 and position at different depth perspective on     the bottom right side of the image to cover the road. The larger windows closer to the driver and the smaller closer to the horizon.     Overlap in both x,y was set between 0.5 and 0.8 to balance the need for better coverage vs number of boxes generated- currently 937.     The more boxes for a sliding window, the more calculations per video image
+    
+    
+# Video Implementation
+
+1. Final video output, Vehicle detection video - 'project_video_vehicle_detection.mp4' (present in Github project repository)
+2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes
+I used scipy.ndimage.measurements.label function which process 3d arrays giving labels in x,y,z spaces. when using the array of heat map history as input, it labels connections in x,y,z. If a returned label box is not represented in at least 3 (heat map history max - 2) z planes then it is rejected as a false positive. The result is that a vehicle is tracked over the heat map history kept.
+
+# Discussion
+I wanted to add the lane detection in the vehicle detection project, but unable to do due to lack of time.
+The pipeline would fail if vehicles were on the left hand side or centre of the car. I suspect trucks, motorbikes, cyclists and pedestrians would not be detected (as they are not in the training data).

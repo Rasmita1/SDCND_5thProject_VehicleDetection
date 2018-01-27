@@ -17,7 +17,7 @@ This project folder contains
 - boxes.py (windowing and box classes)
 - detection.py (main VehicleDetection class that coordinates processing of images)
 
-# Rubric Points
+## Rubric Points
 
 Here I will consider the rubric points individually and describe how each point is addressed in my implementation.
 #Histogram of Oriented Gradients (HOG)
@@ -45,24 +45,26 @@ Here I will consider the rubric points individually and describe how each point 
     I used a linear SVC as the training accuracy is 1.0, and testing accuracy is 0.9887, and 0.009 Seconds to predict 10 labels with SVC.
     15.54 Seconds to train SVC...
 
- # Sliding Window Search
+ ### Sliding Window Search
  1. Describe how (and identify where in your code) you implemented a sliding window search. 
     How did you decide what scales to search and how much to overlap windows?
     
-    For this project four sizes of windows were chosen - 32x32, 48x48, 64x64 and 128x128 and position at different depth perspective on     the bottom right side of the image to cover the road. The larger windows closer to the driver and the smaller closer to the horizon.     Overlap in both x,y was set between 0.5 and 0.8 to balance the need for better coverage vs number of boxes generated- currently 937.     The more boxes for a sliding window, the more calculations per video image
+    For this project four sizes of windows were chosen - 32x32, 48x48, 64x64 and 128x128 and position at different depth perspective on     the bottom right side of the image to cover the road. The larger windows closer to the driver and the smaller closer to the horizon.     Overlap in both x,y was set between 0.5 and 0.8 to balance the need for better coverage vs number of boxes generated- currently 937.     The more boxes for a sliding window, the more calculations per video image.
     
-![frame](https://user-images.githubusercontent.com/28965433/35473390-2fe2ebc6-0380-11e8-8972-a1c41d933865.png)
+test_video.mp4:    
 
+![heatmaps and label](https://user-images.githubusercontent.com/28965433/35473401-58786d7c-0380-11e8-95ab-c71b6043aa8a.png)
 
-
+project_video.mp4:
+![heatmap_history](https://user-images.githubusercontent.com/28965433/35473402-61ffdeb6-0380-11e8-8b12-3fd9e97412c0.png)
 
     
-# Video Implementation
+### Video Implementation
 
 1. Final video output, Vehicle detection video - 'project_video_vehicle_detection.mp4' (present in Github project repository)
 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes
 I used scipy.ndimage.measurements.label function which process 3d arrays giving labels in x,y,z spaces. when using the array of heat map history as input, it labels connections in x,y,z. If a returned label box is not represented in at least 3 (heat map history max - 2) z planes then it is rejected as a false positive. The result is that a vehicle is tracked over the heat map history kept.
 
-# Discussion
+### Discussion
 I wanted to add the lane detection in the vehicle detection project, but unable to do due to lack of time.
 The pipeline would fail if vehicles were on the left hand side or centre of the car. I suspect trucks, motorbikes, cyclists and pedestrians would not be detected (as they are not in the training data).

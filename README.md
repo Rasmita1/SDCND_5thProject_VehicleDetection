@@ -55,6 +55,8 @@ Here I will consider the rubric points individually and describe how each point 
     
 test_video.mp4:    
 
+![frame](https://user-images.githubusercontent.com/28965433/35474608-fcaa0670-0390-11e8-9c18-12bfd83ad243.png)
+
 ![heatmaps and label](https://user-images.githubusercontent.com/28965433/35473401-58786d7c-0380-11e8-95ab-c71b6043aa8a.png)
 
 project_video.mp4:

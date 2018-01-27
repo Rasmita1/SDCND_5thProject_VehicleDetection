@@ -51,6 +51,10 @@ Here I will consider the rubric points individually and describe how each point 
     
     For this project four sizes of windows were chosen - 32x32, 48x48, 64x64 and 128x128 and position at different depth perspective on     the bottom right side of the image to cover the road. The larger windows closer to the driver and the smaller closer to the horizon.     Overlap in both x,y was set between 0.5 and 0.8 to balance the need for better coverage vs number of boxes generated- currently 937.     The more boxes for a sliding window, the more calculations per video image
     
+
+
+
+
     
 # Video Implementation
 

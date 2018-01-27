@@ -17,6 +17,8 @@ This project folder contains
 - boxes.py (windowing and box classes)
 - detection.py (main VehicleDetection class that coordinates processing of images)
 
+I have used the codes present in the the sdcnd and referred the open forum portals.
+
 ## Rubric Points
 
 Here I will consider the rubric points individually and describe how each point is addressed in my implementation.

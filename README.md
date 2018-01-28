@@ -66,6 +66,7 @@ project_video.mp4:
 ### Video Implementation
 
 1. Final video output, Vehicle detection video - 'project_video_VehDet.mp4' (present in Github project repository)
+https://github.com/Rasmita1/SDCND_5thProject_VehicleDetection/blob/master/project_video_VehDet.mp4
 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes
 I used scipy.ndimage.measurements.label function which process 3d arrays giving labels in x,y,z spaces. when using the array of heat map history as input, it labels connections in x,y,z. If a returned label box is not represented in at least 3 (heat map history max - 2) z planes then it is rejected as a false positive. The result is that a vehicle is tracked over the heat map history kept.
 

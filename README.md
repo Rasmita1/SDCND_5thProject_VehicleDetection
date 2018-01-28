@@ -32,8 +32,8 @@ Here I will consider the rubric points individually and describe how each point 
 
    I tried various combinations of parameters and finally set the below parameters,
        color_space = 'YCrCb' # Can be BGR, HSV, LUV, HLS, YUV, YCrCb
-       orient = 9  # HOG orientations
-       pix_per_cell = 8 # HOG pixels per cell
+       orient = 32  # HOG orientations
+       pix_per_cell = 16 # HOG pixels per cell
        cell_per_block = 2 # HOG cells per block
        hog_channel = "ALL" # Can be 0, 1, 2, or "ALL"
        spatial_size = (32, 32) # Spatial binning dimensions
@@ -44,8 +44,8 @@ Here I will consider the rubric points individually and describe how each point 
        hog_feat = True # HOG features on or off
        
  3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them)
-    I used a linear SVC as the training accuracy is 1.0, and testing accuracy is 0.9887, and 0.009 Seconds to predict 10 labels with SVC.
-    15.54 Seconds to train SVC...
+    I used a linear SVC as the training accuracy is 1.0, and testing accuracy is 0.9893, and 0.017 Seconds to predict 10 labels with SVC.
+    8.87 Seconds to train SVC...
 
  ### Sliding Window Search
  1. Describe how (and identify where in your code) you implemented a sliding window search. 
